@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.b6555s.yetupay_api">
+    package="com.b6555s.bpay_api">
 
     <application></application>
 

@@ -1,4 +1,4 @@
-package com.b6555s.yetupay_api;
+package com.b6555s.bpay_api;
 
 import org.junit.Test;
 

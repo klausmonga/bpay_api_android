@@ -1,2 +1,2 @@
-include ':app', ':yetupay-api'
+include ':app', ':bpay-api'
 rootProject.name='yetupay_api'

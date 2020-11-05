@@ -1,4 +1,4 @@
-package com.b6555s.yetupay_api.network;
+package com.b6555s.bpay_api.network;
 
 import android.content.Context;
 import android.content.Intent;
