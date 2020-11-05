@@ -49,14 +49,8 @@ public class ProcessPayment {
         this.run_env = run_env;
     }
 
-    public void addDev(String client_id, String client_secret, String num, String pwd) {
-        this.dev = "\"dev\":{\n" +
-                "\t  \t\"num\":\""+num+"\",\n" +
-                "\t\t\"pwd\":\""+pwd+"\",\n" +
-                "\t\t\"client_id\":\""+client_id+"\",\n" +
-                "\t\t\"client_secret\":\""+client_secret+"\"\n" +
-                "\t  \t\n" +
-                "\t  }";
+    public void addDev(String md5) {
+        this.dev = "\"dev\":{\"md5\":"+md5+"}";
     }
 
     public String getBill_to() {
@@ -71,8 +65,8 @@ public class ProcessPayment {
     public String getP_info() {
         return p_info;
     }
-    public void addProduct(String receiver,double price, int quantity,String name,String description){
-        this.productsList+=",{\"receiver\":\""+receiver+"\",\"price\":"+String.valueOf(price)+",\"quantity\":"+String.valueOf(quantity)+",\"name\":\""+name+"\",\"description\":\""+description+"\"}";
+    public void addProduct(double price, int quantity,String name,String description){
+        this.productsList+=",{\"price\":"+String.valueOf(price)+",\"quantity\":"+String.valueOf(quantity)+",\"name\":\""+name+"\",\"description\":\""+description+"\"}";
     }
     public String getProductsList(){
         return this.productsList;
@@ -117,13 +111,13 @@ public class ProcessPayment {
             StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Log.i("YETUPAY API LOG", response);
-                    context.sendBroadcast(new Intent("YETUPAY-API").putExtra("response",response));
+                    Log.i("bpay API LOG", response);
+                    context.sendBroadcast(new Intent("bpay-api").putExtra("response",response));
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.e("YETUPAY API LOG", error.toString());
+                    Log.e("bpay API LOG", error.toString());
                 }
             }) {
                 @Override
