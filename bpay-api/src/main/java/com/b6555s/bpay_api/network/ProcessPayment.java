@@ -50,7 +50,7 @@ public class ProcessPayment {
     }
 
     public void addDev(String dev_key, String business_key) {
-        this.dev = "\"dev\":{\"dev_key\":\""+dev_md5+"\",\"business_key\":\""+business_key+"\"}";
+        this.dev = "\"dev\":{\"dev_key\":\""+dev_key+"\",\"business_key\":\""+business_key+"\"}";
     }
 
     public String getBill_to() {
