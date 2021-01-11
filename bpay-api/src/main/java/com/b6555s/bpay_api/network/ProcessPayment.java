@@ -49,8 +49,8 @@ public class ProcessPayment {
         this.run_env = run_env;
     }
 
-    public void addDev(String md5) {
-        this.dev = "\"dev\":{\"md5\":"+md5+"}";
+    public void addDev(String dev_md5, String business_key) {
+        this.dev = "\"dev\":{\"dev_md5\":"+dev_md5+",\"business_key\":"+business_key+"}";
     }
 
     public String getBill_to() {
